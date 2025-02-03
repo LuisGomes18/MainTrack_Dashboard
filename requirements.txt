@@ -1,0 +1,9 @@
+django
+requests
+mysql-connector-python
+python-dotenv 
+pytest
+pymysql
+cryptography 
+gunicorn
+netifaces
