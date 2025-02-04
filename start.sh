@@ -1,25 +1,25 @@
 #!/bin/bash
 
 
-caminho=$(pwd)
+path=$(pwd)
 cd ..
 clear
 
 
-if [ -f "$caminho/.env" ]; then
+if [ -f "$path/.env" ]; then
     set -a  
-    source "$caminho/.env"
+    source "$path/.env"
     set +a
 else
-    echo "Erro: Ficheiro .env não encontrado."
+    echo "Error: .env file not found."
     exit 1
 fi
 
-if [ ! -f "$caminho/.venv/bin/python" ]; then
-    echo "Erro: Ambiente virtual não encontrado em $caminho/.venv"
+if [ ! -f "$path/.venv/bin/python" ]; then
+    echo "Error: Virtual environment not found in $path/.venv"
     exit 1
 fi
 
-echo -e "\n\nStarting DisSafe API\n\n"
-"$caminho/.venv/bin/python" "$caminho/manage.py" runserver "$HOST:$PORT"
+echo -e "\n\nStarting Main Track API\n\n"
+"$path/.venv/bin/python" "$path/manage.py" runserver "$HOST:$PORT"
 echo -e "\n\n"
